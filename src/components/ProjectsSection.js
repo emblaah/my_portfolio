@@ -45,12 +45,12 @@ export default function ProjectsSection() {
             target="_blank"
             className="border p-4 rounded-lg shadow hover:shadow-md transition">
             <h3 className="text-xl font-bold">{project.title}</h3>
-            <p className="text-primary mt-2">{project.description}</p>
+            <p className="mt-2">{project.description}</p>
             <div className="mt-4">
               {project.techsUsed.map((tech, index) => (
                 <span
                   key={index}
-                  className="inline-block bg-secondary text-primary-foreground px-2 py-1 rounded-full text-sm mr-2">
+                  className="bg-secondary inline-block px-2 py-1 rounded-full text-sm mr-2">
                   {tech}
                 </span>
               ))}
