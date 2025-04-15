@@ -31,10 +31,8 @@
   --font-mono: var(--font-geist-mono);
 }
 
-
-
 body {
   background: var(--bg-color);
   color: var(--text-color);
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }

@@ -22,9 +22,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen antialiased">
-        <Header />
-        <main className="">{children}</main>
-        <Footer />
+        <div className="mx-auto">
+          <Header />
+          <main className="">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
