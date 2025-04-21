@@ -4,7 +4,7 @@ import ThemeButton from "./ThemeButton";
 
 export default function Header() {
   return (
-    <header className="flex justify-between items-center px-6 py-4 shadow-md top-0 z-50">
+    <header className="flex justify-between items-center w-full px-6 py-4 top-0 z-50">
       <h1 className="text-2xl font-bold">Embla</h1>
       <nav className="space-x-4 flex justify-center items-center">
         <a href="#about" className="hover:underline">

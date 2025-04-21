@@ -19,21 +19,21 @@ export default function HeroSection() {
   // Item variants for the staggered effect
   const itemVariants = {
     hidden: {
-      opacity: 0,
+      opacity: 1,
       y: -20,
     },
     visible: {
-      opacity: 1,
+      opacity: 30,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.5,
         ease: "easeOut",
       },
     },
   };
 
   return (
-    <div >
+    <div>
       <div className="flex items-center justify-center h-screen">
         <motion.div
           className="flex flex-col items-start"
@@ -41,19 +41,24 @@ export default function HeroSection() {
           initial="hidden"
           animate="visible">
           <motion.div
-            className="text-3xl md:text-5xl mb-2"
+            className="text-3xl md:text-5xl lg:text-7xl mb-2"
             variants={itemVariants}>
             <span>Embla</span>
           </motion.div>
           <motion.div
-            className="text-3xl md:text-5xl mb-2 ml-8 md:ml-16"
+            className="text-3xl md:text-5xl lg:text-7xl mb-2 ml-6 md:ml-16"
             variants={itemVariants}>
             <span>Andersson</span>
           </motion.div>
           <motion.div
-            className="text-3xl md:text-5xl  ml-16 md:ml-32"
+            className="text-3xl md:text-5xl lg:text-7xl mb-2 ml-12 md:ml-32"
             variants={itemVariants}>
-            <span>Frontend Developer</span>
+            <span>Frontend</span>
+          </motion.div>
+          <motion.div
+            className="text-3xl md:text-5xl lg:text-7xl ml-20 md:ml-48"
+            variants={itemVariants}>
+            <span>Developer</span>
           </motion.div>
         </motion.div>
       </div>
