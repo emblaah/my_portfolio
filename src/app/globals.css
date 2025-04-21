@@ -17,7 +17,7 @@
 .dark {
   --radius: 1rem;
   --bg-color: oklch(0.23 0 0);
-  --bg-secondary: oklch(0.32 0 0);
+  --secondary: oklch(0.32 0 0);
   --text-color: oklch(0.93 0.0046 78.3);
   --text-secondary: oklch(0.23 0.132 292.63);
 }
@@ -25,7 +25,7 @@
 @theme {
   --color-background: var(--bg-color);
   --color-text: var(--text-color);
-  --color-secondary: var(--bg-secondary);
+  --color-secondary: var(--secondary);
   --color-text-secondary: var(--text-secondary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

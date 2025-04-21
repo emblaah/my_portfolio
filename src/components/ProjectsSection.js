@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { LucideLink, Github } from "lucide-react";
 
 const projects = [
   {
@@ -55,14 +56,14 @@ export default function ProjectsSection() {
                 <Link
                   href={project.liveLink}
                   target=""
-                  className="text-blue-500 hover:underline bg-secondary p-2 rounded-full">
-                  Live
+                  className="bg-secondary p-2 rounded-full">
+                  <LucideLink />
                 </Link>
                 <Link
                   href={project.githubLink}
                   target="_blank"
-                  className="text-blue-500 hover:underline mr-4 bg-secondary p-2 rounded-full">
-                  GitHub
+                  className="bg-secondary p-2 rounded-full">
+                  <Github />
                 </Link>
               </div>
             </div>

@@ -1,11 +1,37 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ThemeButton from "./ThemeButton";
 
 export default function Header() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Check initial theme
+    const checkTheme = () => {
+      setIsDarkMode(document.documentElement.classList.contains("dark"));
+    };
+
+    // Run once on mount
+    checkTheme();
+
+    const observer = new MutationObserver(checkTheme);
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <header className="flex justify-between items-center w-full px-6 py-4 top-0 z-50">
-      <h1 className="text-2xl font-bold">Embla</h1>
+      {isDarkMode ? (
+        <img src="/initials_dark.png" alt="Initials" className="h-12" />
+      ) : (
+        <img src="/initials_light.png" alt="Initials" className="h-12" />
+      )}
+
       <nav className="space-x-4 flex justify-center items-center">
         <a href="#about" className="hover:underline">
           About
