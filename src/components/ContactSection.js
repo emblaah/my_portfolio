@@ -9,7 +9,7 @@ export default function ContactSection() {
       </p>
       <a
         href="mailto:your.email@example.com"
-        className="inline-block mt-2 text-blue-600 underline">
+        className="inline-block mt-2 underline">
         emblaandersson@yahoo.se
       </a>
     </section>
