@@ -49,10 +49,9 @@ export default function ProjectsSection() {
           <div
             key={index}
             target="_blank"
-            className="border p-4 rounded-lg shadow hover:shadow-md transition">
+            className="border-t p-4 transition">
             <div className="flex justify-between items-center">
-              <h3 className="text-xl font-bold">{project.title}</h3>
-              <div className="flex mt-4 gap-2 ">
+              <div className="flex">
                 <Link
                   href={project.liveLink}
                   target=""
@@ -66,6 +65,8 @@ export default function ProjectsSection() {
                   <Github />
                 </Link>
               </div>
+              <h3 className="text-xl font-bold">{project.title}</h3>
+              <div className="flex mt-4 gap-2 "></div>
             </div>
             <p className="mt-2">{project.description}</p>
             <div className="flex justify-between items-center">

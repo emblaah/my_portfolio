@@ -33,15 +33,6 @@ export default function Header() {
       )}
 
       <nav className="space-x-4 flex justify-center items-center">
-        <a href="#about" className="hover:underline">
-          About
-        </a>
-        <a href="#projects" className="hover:underline">
-          Projects
-        </a>
-        <a href="#contact" className="hover:underline">
-          Contact
-        </a>
         <ThemeButton />
       </nav>
     </header>

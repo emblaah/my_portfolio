@@ -8,7 +8,7 @@ export default function ContactSection() {
         Interested in working together or have a question? Drop me a message:
       </p>
       <a
-        href="mailto:your.email@example.com"
+        href="mailto:emblaandersson@yahoo.se"
         className="inline-block mt-2 underline">
         emblaandersson@yahoo.se
       </a>

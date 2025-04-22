@@ -1,9 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
+  const [hoveredCell, setHoveredCell] = useState(null);
+
+  // Grid configuration
+  const gridSize = {
+    rows: 10,
+    cols: 10,
+  };
+
   // Container variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -32,55 +40,99 @@ export default function HeroSection() {
     },
   };
 
+  // Generate grid cells
+  const renderGrid = () => {
+    const cells = [];
+    for (let i = 0; i < gridSize.rows * gridSize.cols; i++) {
+      const row = Math.floor(i / gridSize.cols);
+      const col = i % gridSize.cols;
+
+      cells.push(
+        <div
+          key={i}
+          className="border dark:border-secondary border-opacity-20 dark:border-opacity-20"
+          style={{
+            gridRow: row + 1,
+            gridColumn: col + 1,
+          }}
+          onMouseEnter={() => setHoveredCell(i)}
+          onMouseLeave={() => setHoveredCell(null)}>
+          <motion.div
+            className="h-full w-full bg-secondary"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{
+              backgroundColor:
+                hoveredCell === i
+                  ? "rgba(var(--color-secondary), 0.2)"
+                  : hoveredCell === i - 1 ||
+                    hoveredCell === i + 1 ||
+                    hoveredCell === i - gridSize.cols ||
+                    hoveredCell === i + gridSize.cols
+                  ? "rgba(var(--color-secondary), 0.05)"
+                  : "rgba(0, 0, 0, 0)",
+            }}
+            transition={{ duration: 0.3 }}
+          />
+
+          {/* Effect for neighboring cells */}
+          {(hoveredCell === i - 1 ||
+            hoveredCell === i + 1 ||
+            hoveredCell === i - gridSize.cols ||
+            hoveredCell === i + gridSize.cols) && (
+            <motion.div
+              className="absolute inset-0 bg-secondary"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.05 }}
+              transition={{ duration: 0.2 }}
+            />
+          )}
+        </div>
+      );
+    }
+    return cells;
+  };
+
   return (
-    <div>
-      <div className="flex items-center justify-center h-screen">
+    <div className="relative h-screen">
+      {/* Grid background */}
+      <div
+        className="absolute inset-0 grid z-0"
+        style={{
+          gridTemplateRows: `repeat(${gridSize.rows}, 1fr)`,
+          gridTemplateColumns: `repeat(${gridSize.cols}, 1fr)`,
+        }}>
+        {renderGrid()}
+      </div>
+
+      {/* Hero section positioned above grid */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-svh">
         <motion.div
           className="flex flex-col items-start"
           variants={containerVariants}
           initial="hidden"
           animate="visible">
           <motion.div
-            className="text-3xl md:text-5xl lg:text-7xl mb-2"
+            className="text-5xl md:text-6xl lg:text-7xl mb-2"
             variants={itemVariants}>
             <span>Embla</span>
           </motion.div>
           <motion.div
-            className="text-3xl md:text-5xl lg:text-7xl mb-2 ml-6 md:ml-16"
+            className="text-5xl md:text-6xl lg:text-7xl mb-2 ml-12 md:ml-16"
             variants={itemVariants}>
             <span>Andersson</span>
           </motion.div>
           <motion.div
-            className="text-3xl md:text-5xl lg:text-7xl mb-2 ml-12 md:ml-32"
+            className="text-5xl md:text-6xl lg:text-7xl mb-2 ml-24 md:ml-32"
             variants={itemVariants}>
             <span>Frontend</span>
           </motion.div>
           <motion.div
-            className="text-3xl md:text-5xl lg:text-7xl ml-20 md:ml-48"
+            className="text-5xl md:text-6xl lg:text-7xl ml-38 md:ml-48"
             variants={itemVariants}>
             <span>Developer</span>
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Main text content */}
     </div>
   );
-}
-
-{
-  /* <div className="text-center px-8 md:px-16 w-full max-w-4xl">
-  <h1>
-    <div className="text-5xl md:text-7xl opacity-90 mb-2">Hello</div>
-    <div className="text-7xl md:text-9xl opacity-90 leading-tight">
-      my name
-    </div>
-    <div className="text-7xl md:text-9xl opacity-90 leading-tight">
-      is <span className="italic text-8xl md:text-10xl">Embla</span>
-    </div>
-    <div className="text-3xl md:text-4xl opacity-80 mt-4">
-      a Frontend Developer
-    </div>
-  </h1>
-</div> */
 }
