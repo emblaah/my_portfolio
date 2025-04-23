@@ -57,7 +57,7 @@ export default function HeroSection() {
     <>
       {/* The faint background grid */}
       <div
-        className="absolute inset-0 pointer-events-none transition-all duration-100 h-fit w-full"
+        className="absolute inset-0 pointer-events-none transition-all duration-100 h-fit "
         style={{
           backgroundImage: `
             linear-gradient(var(--primary-text) 1px, transparent 1px),

@@ -1,6 +1,6 @@
 export default function EducationSection() {
   return (
-    <section className="px-4 mt-10 bg-secondary-background">
+    <section className="relative w-screen px-4 mt-10 bg-secondary-background">
       <h2 className="text-3xl font-semibold mb-4">Education</h2>
       <div className="mb-4">
         <p>2024 - 2026</p>
@@ -9,9 +9,7 @@ export default function EducationSection() {
       </div>
       <div className="mb-4">
         <p>2024</p>
-        <h3 className="text-xl font-semibold">
-          Programmering 1 — C++ 
-        </h3>
+        <h3 className="text-xl font-semibold">Programmering 1 — C++</h3>
         <p>Iris Vuxenutbildning | Järfälla, Sweden</p>
       </div>
 

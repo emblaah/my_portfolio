@@ -42,7 +42,7 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section className="max-w-4xl mt-10 px-4">
+    <section className="relative w-screen mt-10 px-4">
       <h2 className="text-3xl font-semibold mb-6">Projects</h2>
       <div className="flex flex-col gap-6">
         {projects.map((project, index) => (
