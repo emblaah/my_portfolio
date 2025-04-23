@@ -29,7 +29,7 @@ export default function ThemeButton() {
 
   return (
     <button
-      className="flex items-center justify-center hover:text-secondary hover:bg-secondary-background hover:rounded-full p-1 duration-300 ease-in cursor-pointer"
+      className="flex items-center justify-center hover:text-secondary hover:bg-secondary-background hover:rounded-full p-2 duration-300 ease-in cursor-pointer"
       onClick={handleToggle}
       aria-label="Toggle theme">
       {theme === "dark" ? <Sun size={24} /> : <Moon size={24} />}
