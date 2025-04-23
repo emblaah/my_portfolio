@@ -51,12 +51,12 @@ export default function ProjectsSection() {
               <div className="flex gap-2">
                 <Link
                   href={project.liveLink}
-                  className="bg-secondary p-2 rounded-full hover:text-text-secondary transition">
+                  className="bg-secondary-background p-2 rounded-full hover:secondary transition">
                   <LucideLink />
                 </Link>
                 <Link
                   href={project.githubLink}
-                  className="hover:text-text-secondary bg-secondary p-2 rounded-full">
+                  className="hover:secondary bg-secondary-background p-2 rounded-full">
                   <Github />
                 </Link>
               </div>
@@ -67,7 +67,7 @@ export default function ProjectsSection() {
               {project.techsUsed.map((tech, index) => (
                 <div
                   key={index}
-                  className="inline-block bg-text-secondary px-2 py-1 rounded-full text-sm">
+                  className="inline-block bg-secondary px-2 py-1 rounded-full text-sm">
                   {tech}
                 </div>
               ))}
