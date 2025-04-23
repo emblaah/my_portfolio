@@ -11,7 +11,7 @@
   --bg-color: oklch(0.96 0.0143 84.58);
   --secondary: oklch(0.81 0.0143 84.58);
   --text-color: oklch(0.29 0 0);
-  --text-secondary: oklch(0.26 0.132 292.63);
+  --text-secondary: oklch(0.8 0.183 55.334);
 }
 
 .dark {
@@ -19,7 +19,7 @@
   --bg-color: oklch(0.23 0 0);
   --secondary: oklch(0.32 0 0);
   --text-color: oklch(0.93 0.0046 78.3);
-  --text-secondary: oklch(0.23 0.132 292.63);
+  --text-secondary: oklch(0.8 0.183 55.334);
 }
 
 @theme {

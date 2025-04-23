@@ -46,39 +46,31 @@ export default function ProjectsSection() {
       <h2 className="text-3xl font-semibold mb-6">Projects</h2>
       <div className="flex flex-col gap-6">
         {projects.map((project, index) => (
-          <div
-            key={index}
-            target="_blank"
-            className="border-t p-4 transition">
+          <div key={index} target="_blank" className="border-t p-4 transition">
             <div className="flex justify-between items-center">
-              <div className="flex">
+              <div className="flex gap-2">
                 <Link
                   href={project.liveLink}
-                  target=""
-                  className="bg-secondary p-2 rounded-full">
+                  className="bg-secondary p-2 rounded-full hover:text-text-secondary transition">
                   <LucideLink />
                 </Link>
                 <Link
                   href={project.githubLink}
-                  target="_blank"
-                  className="bg-secondary p-2 rounded-full">
+                  className="hover:text-text-secondary bg-secondary p-2 rounded-full">
                   <Github />
                 </Link>
               </div>
               <h3 className="text-xl font-bold">{project.title}</h3>
-              <div className="flex mt-4 gap-2 "></div>
             </div>
             <p className="mt-2">{project.description}</p>
-            <div className="flex justify-between items-center">
-              <div className="mt-4">
-                {project.techsUsed.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="bg-secondary inline-block px-2 py-1 rounded-full text-sm mr-2">
-                    {tech}
-                  </span>
-                ))}
-              </div>
+            <div className="flex justify-end gap-2">
+              {project.techsUsed.map((tech, index) => (
+                <div
+                  key={index}
+                  className="inline-block bg-text-secondary px-2 py-1 rounded-full text-sm">
+                  {tech}
+                </div>
+              ))}
             </div>
           </div>
         ))}

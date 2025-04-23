@@ -15,3 +15,6 @@ export default function ContactSection() {
     </section>
   );
 }
+
+
+// ADD LinkedIn, GitHub, and CV links here with icons

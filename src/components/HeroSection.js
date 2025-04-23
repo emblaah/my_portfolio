@@ -47,46 +47,34 @@ export default function HeroSection() {
       const row = Math.floor(i / gridSize.cols);
       const col = i % gridSize.cols;
 
+      // Check if this cell is the hovered one or adjacent to it
+      const isHovered = hoveredCell === i;
+      const isAdjacent =
+        hoveredCell === i - 1 ||
+        hoveredCell === i + 1 ||
+        hoveredCell === i - gridSize.cols ||
+        hoveredCell === i + gridSize.cols;
+
       cells.push(
-        <div
+        <motion.div
           key={i}
-          className="border dark:border-secondary border-opacity-20 dark:border-opacity-20"
+          className={`border dark:border-secondary border-opacity-20 dark:border-opacity-20 hover:bg-text-secondary hover:bg-opacity-10 rounded-lg`}
           style={{
             gridRow: row + 1,
             gridColumn: col + 1,
           }}
           onMouseEnter={() => setHoveredCell(i)}
-          onMouseLeave={() => setHoveredCell(null)}>
-          <motion.div
-            className="h-full w-full bg-secondary"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{
-              backgroundColor:
-                hoveredCell === i
-                  ? "rgba(var(--color-secondary), 0.2)"
-                  : hoveredCell === i - 1 ||
-                    hoveredCell === i + 1 ||
-                    hoveredCell === i - gridSize.cols ||
-                    hoveredCell === i + gridSize.cols
-                  ? "rgba(var(--color-secondary), 0.05)"
-                  : "rgba(0, 0, 0, 0)",
-            }}
-            transition={{ duration: 0.3 }}
-          />
-
-          {/* Effect for neighboring cells */}
-          {(hoveredCell === i - 1 ||
-            hoveredCell === i + 1 ||
-            hoveredCell === i - gridSize.cols ||
-            hoveredCell === i + gridSize.cols) && (
-            <motion.div
-              className="absolute inset-0 bg-secondary"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.05 }}
-              transition={{ duration: 0.2 }}
-            />
-          )}
-        </div>
+          onMouseLeave={() => setHoveredCell(null)}
+          animate={{
+            backgroundColor: isHovered
+              ? "var(--secondary)"
+              : isAdjacent
+              ? "var(--secondary)"
+              : "transparent",
+            opacity: isHovered ? 0.3 : isAdjacent ? 0.1 : 0,
+          }}
+          transition={{ duration: 0.3 }}
+        />
       );
     }
     return cells;
@@ -100,34 +88,40 @@ export default function HeroSection() {
         style={{
           gridTemplateRows: `repeat(${gridSize.rows}, 1fr)`,
           gridTemplateColumns: `repeat(${gridSize.cols}, 1fr)`,
-        }}>
+        }}
+        onMouseEnter={() =>
+          document.querySelector(".grid").classList.add("grid-active")
+        }
+        onMouseLeave={() =>
+          document.querySelector(".grid").classList.remove("grid-active")
+        }>
         {renderGrid()}
       </div>
 
       {/* Hero section positioned above grid */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-svh">
+      <div className="relative z-10 flex flex-col items-center justify-center h-screen">
         <motion.div
           className="flex flex-col items-start"
           variants={containerVariants}
           initial="hidden"
           animate="visible">
           <motion.div
-            className="text-5xl md:text-6xl lg:text-7xl mb-2"
+            className="text-6xl md:text-6xl lg:text-7xl mb-2"
             variants={itemVariants}>
             <span>Embla</span>
           </motion.div>
           <motion.div
-            className="text-5xl md:text-6xl lg:text-7xl mb-2 ml-12 md:ml-16"
+            className="text-6xl md:text-6xl lg:text-7xl mb-2 ml-12 md:ml-16"
             variants={itemVariants}>
             <span>Andersson</span>
           </motion.div>
           <motion.div
-            className="text-5xl md:text-6xl lg:text-7xl mb-2 ml-24 md:ml-32"
+            className="text-text-secondary text-5xl md:text-6xl lg:text-7xl mb-2 ml-24 md:ml-32"
             variants={itemVariants}>
             <span>Frontend</span>
           </motion.div>
           <motion.div
-            className="text-5xl md:text-6xl lg:text-7xl ml-38 md:ml-48"
+            className="text-text-secondary text-5xl md:text-6xl lg:text-7xl ml-38 md:ml-48"
             variants={itemVariants}>
             <span>Developer</span>
           </motion.div>
