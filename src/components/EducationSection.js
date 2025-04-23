@@ -1,6 +1,6 @@
 export default function EducationSection() {
   return (
-    <section className="max-w-2xl px-4 mt-10">
+    <section className="px-4 mt-10 bg-secondary-background">
       <h2 className="text-3xl font-semibold mb-4">Education</h2>
       <div className="mb-4">
         <p>2024 - 2026</p>

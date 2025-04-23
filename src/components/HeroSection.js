@@ -57,13 +57,13 @@ export default function HeroSection() {
     <>
       {/* The faint background grid */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none h-fit"
         style={{
           backgroundImage: `
             linear-gradient(var(--primary-text, rgba(255, 255, 255, 0.02)) 1px, transparent 1px),
             linear-gradient(90deg, var(--primary-text, rgba(255, 255, 255, 0.02)) 1px, transparent 1px)
           `,
-          backgroundSize: "120px 120px",
+          backgroundSize: "100px 100px",
           opacity: 0.05,
         }}
       />
@@ -71,22 +71,22 @@ export default function HeroSection() {
       {/* The glow layer that will highlight the grid when hovering */}
       <div
         ref={glowLayerRef}
-        className="absolute inset-0 pointer-events-auto transition-all duration-100"
+        className="absolute inset-0 pointer-events-auto transition-all duration-100 h-screen"
         style={{
           backgroundImage: `
-            linear-gradient(var(--primary-text, rgba(255, 255, 255, 0.25)) 1px, transparent 1px),
-            linear-gradient(90deg, var(--primary-text, rgba(255, 255, 255, 0.25)) 1px, transparent 1px)
+            linear-gradient(var(--secondary) 2px, transparent 1px),
+            linear-gradient(90deg, var(--secondary) 2px, transparent 1px)
           `,
-          backgroundSize: "120px 120px",
+          backgroundSize: "100px 100px",
           maskImage:
-            "radial-gradient(circle at center, rgba(255,255,255,0.9) 0%, transparent 50%)",
+            "radial-gradient(circle at center, rgba(255,255,255,0.9) 0%, transparent 80%)",
           WebkitMaskImage:
-            "radial-gradient(circle at center, rgba(255,255,255,0.9) 0%, transparent 50%)",
-          opacity: 0.3,
+            "radial-gradient(circle at center, rgba(255,255,255,0.9) 0%, transparent 80%)",
+          opacity: 0.7,
         }}
       />
       {/* The main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-screen">
+      <div className="relative z-10 flex flex-col items-center justify-center h-screen w-full">
         <motion.div
           className="flex flex-col items-start"
           variants={containerVariants}

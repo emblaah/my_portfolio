@@ -10,7 +10,7 @@ const projects = [
     description: "A modern single-page portfolio built with Next.js.",
     techsUsed: ["React", "Tailwind CSS"],
     githubLink: "https://github.com/emblaah/ws-react-todolist",
-    liveLink: "https://example.com",
+    liveLink: "https://ws-react-todolist.vercel.app/",
   },
   {
     id: 2,
@@ -51,12 +51,12 @@ export default function ProjectsSection() {
               <div className="flex gap-2">
                 <Link
                   href={project.liveLink}
-                  className="bg-secondary-background p-2 rounded-full hover:secondary transition">
+                  className="bg-secondary-background p-2 rounded-full hover:text-secondary duration-200 ease-in transition">
                   <LucideLink />
                 </Link>
                 <Link
                   href={project.githubLink}
-                  className="hover:secondary bg-secondary-background p-2 rounded-full">
+                  className="hover:text-secondary duration-200 ease-in bg-secondary-background p-2 rounded-full">
                   <Github />
                 </Link>
               </div>
