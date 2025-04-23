@@ -25,7 +25,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="flex justify-between items-center w-full px-6 py-4 top-0 z-50">
+    <header className="absolute flex justify-between items-center w-full px-6 py-4 top-0 z-50">
       {isDarkMode ? (
         <img src="/initials_dark.png" alt="Initials" className="h-12" />
       ) : (
