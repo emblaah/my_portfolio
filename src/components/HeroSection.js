@@ -57,11 +57,11 @@ export default function HeroSection() {
     <>
       {/* The faint background grid */}
       <div
-        className="absolute inset-0 pointer-events-none h-fit"
+        className="absolute inset-0 pointer-events-none transition-all duration-100 h-fit w-full"
         style={{
           backgroundImage: `
-            linear-gradient(var(--primary-text, rgba(255, 255, 255, 0.02)) 1px, transparent 1px),
-            linear-gradient(90deg, var(--primary-text, rgba(255, 255, 255, 0.02)) 1px, transparent 1px)
+            linear-gradient(var(--primary-text) 1px, transparent 1px),
+            linear-gradient(90deg, var(--primary-text) 1px, transparent 1px)
           `,
           backgroundSize: "100px 100px",
           opacity: 0.05,
@@ -71,7 +71,7 @@ export default function HeroSection() {
       {/* The glow layer that will highlight the grid when hovering */}
       <div
         ref={glowLayerRef}
-        className="absolute inset-0 pointer-events-auto transition-all duration-100 h-screen"
+        className="absolute inset-0 pointer-events-auto transition-all duration-100 min-h-screen"
         style={{
           backgroundImage: `
             linear-gradient(var(--secondary) 2px, transparent 1px),
@@ -86,7 +86,7 @@ export default function HeroSection() {
         }}
       />
       {/* The main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-screen w-full">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-[90vh] w-full">
         <motion.div
           className="flex flex-col items-start"
           variants={containerVariants}
