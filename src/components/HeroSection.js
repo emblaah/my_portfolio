@@ -86,32 +86,44 @@ export default function HeroSection() {
         }}
       />
       {/* The main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-[90vh] w-full">
+      <div className="relative z-10 flex flex-col items-center justify-center h-dvh w-full">
         <motion.div
           className="flex flex-col items-start"
           variants={containerVariants}
           initial="hidden"
           animate="visible">
           <motion.div
-            className="text-6xl md:text-6xl lg:text-7xl mb-2"
+            className="text-5xl md:text-6xl lg:text-7xl mb-2"
             variants={itemVariants}>
             <span>Embla</span>
           </motion.div>
           <motion.div
-            className="text-6xl md:text-6xl lg:text-7xl mb-2 ml-12 md:ml-16"
+            className="text-5xl md:text-6xl lg:text-7xl mb-2 ml-12 md:ml-16"
             variants={itemVariants}>
             <span>Andersson</span>
           </motion.div>
           <motion.div
-            className="text-secondary text-5xl md:text-6xl lg:text-7xl mb-2 ml-24 md:ml-32"
+            className="text-secondary text-4xl md:text-6xl lg:text-7xl mb-2 ml-24 md:ml-32"
             variants={itemVariants}>
             <span>Frontend</span>
           </motion.div>
           <motion.div
-            className="text-secondary text-5xl md:text-6xl lg:text-7xl ml-38 md:ml-48"
+            className="text-secondary text-4xl md:text-6xl lg:text-7xl ml-38 md:ml-48"
             variants={itemVariants}>
             <span>Developer</span>
           </motion.div>
+        </motion.div>
+        <motion.div
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center text-sm text-primary-text flex flex-col items-center"
+          variants={itemVariants}>
+          <p>Scroll down to see more</p>
+          <div className="mt-2">
+            <svg
+              className="animate-bounce w-2 h-2 bg-secondary rounded-full"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            />
+          </div>
         </motion.div>
       </div>
     </>
