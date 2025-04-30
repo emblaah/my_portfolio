@@ -1,9 +1,16 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
+  // State to control the visibility of the scroll indicator
+  const [scrollOpacity, setScrollOpacity] = useState(1);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Ref to the glow layer
+  const glowLayerRef = useRef(null);
+
   // Container variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -32,9 +39,16 @@ export default function HeroSection() {
     },
   };
 
-  const glowLayerRef = useRef(null);
+  useEffect(() => {
+    // Set the mounted state to true after the component mounts
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
+    // Check if the component is mounted before adding event listeners
+    if (!isMounted) return;
+
+    // Function to handle mouse movement
     const handleMouseMove = (e) => {
       if (glowLayerRef.current) {
         const x = e.clientX;
@@ -45,13 +59,28 @@ export default function HeroSection() {
       }
     };
 
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const maxScrollForFade = 100;
+
+      if (scrollPosition <= maxScrollForFade) {
+        const newOpacity = 1 - scrollPosition / maxScrollForFade;
+        setScrollOpacity(newOpacity);
+      } else {
+        setScrollOpacity(0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
     document.addEventListener("mousemove", handleMouseMove);
+    
 
     // Clean up the event listener when component unmounts
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isMounted]);
 
   return (
     <>
@@ -113,9 +142,12 @@ export default function HeroSection() {
             <span>Developer</span>
           </motion.div>
         </motion.div>
+        {/* Scroll indicator */}
+
         <motion.div
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center text-sm text-primary-text flex flex-col items-center"
-          variants={itemVariants}>
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center text-sm text-primary-text flex flex-col items-center opacity-70"
+          variants={itemVariants}
+          style={{ opacity: scrollOpacity * 0.7 }}>
           <p>Scroll down to see more</p>
           <div className="mt-2">
             <svg

@@ -7,7 +7,8 @@ const projects = [
   {
     id: 1,
     title: "Todo List App",
-    description: "A modern single-page portfolio built with Next.js.",
+    description:
+      "A simple todo list application built with React and styled using Tailwind CSS. Users can add, edit, and delete tasks.",
     techsUsed: ["React", "Tailwind CSS"],
     githubLink: "https://github.com/emblaah/ws-react-todolist",
     liveLink: "https://ws-react-todolist.vercel.app/",
@@ -17,7 +18,7 @@ const projects = [
     title: "Pokemon API Site",
     description:
       "A website that dynamically connects to the Pokemon API to display information about different Pokemon. Built with React and styled using Tailwind CSS.",
-    techsUsed: ["React", "Next.js", "Tailwind CSS"],
+    techsUsed: ["Next.js", "Tailwind CSS", "PokeAPI", "Context API"],
     githubLink: "https://github.com/emblaah/chas_pokemon_site",
     liveLink: "https://pokemon-site-nu.vercel.app/",
   },
@@ -42,38 +43,42 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section className="relative w-screen mt-10 px-4">
-      <h2 className="text-3xl font-semibold mb-6">Projects</h2>
-      <div className="flex flex-col gap-6">
-        {projects.map((project, index) => (
-          <div key={index} target="_blank" className="border-t p-4 transition">
-            <div className="flex justify-between items-center">
-              <div className="flex gap-2">
-                <Link
-                  href={project.liveLink}
-                  className="bg-secondary-background p-2 rounded-full hover:text-secondary duration-200 ease-in transition">
-                  <LucideLink />
-                </Link>
-                <Link
-                  href={project.githubLink}
-                  className="hover:text-secondary duration-200 ease-in bg-secondary-background p-2 rounded-full">
-                  <Github />
-                </Link>
-              </div>
-              <h3 className="text-xl font-bold">{project.title}</h3>
-            </div>
-            <p className="mt-2">{project.description}</p>
-            <div className="flex justify-end gap-2">
-              {project.techsUsed.map((tech, index) => (
-                <div
-                  key={index}
-                  className="inline-block bg-secondary px-2 py-1 rounded-full text-sm">
-                  {tech}
+    <section className="relative flex flex-col w-screen px-4 py-10">
+      <div className="w-full mx-auto px-[1rem] sm:px-[5rem]">
+        <h2 className="text-3xl font-semibold mb-6">Projects</h2>
+        <div className="flex flex-col gap-6">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="border-l border-secondary pl-4">
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl underline ">{project.title}</h3>
+                <div className="flex gap-2">
+                  <Link
+                    href={project.liveLink}
+                    className="bg-secondary-background p-2 rounded-full hover:text-secondary duration-200 ease-in transition">
+                    <LucideLink />
+                  </Link>
+                  <Link
+                    href={project.githubLink}
+                    className="hover:text-secondary duration-200 ease-in bg-secondary-background p-2 rounded-full">
+                    <Github />
+                  </Link>
                 </div>
-              ))}
+              </div>
+              <p className="mt-2">{project.description}</p>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {project.techsUsed.map((tech, index) => (
+                  <div
+                    key={index}
+                    className="inline-block bg-secondary px-2 py-1 rounded-full text-sm">
+                    {tech}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
