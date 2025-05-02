@@ -1,57 +1,36 @@
 "use client";
+
 import React, { useState } from "react";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
-    fullName: "",
+    name: "",
     email: "",
-    subject: "",
     message: "",
   });
-  const [isSending, setIsSending] = useState(false);
+  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    //confirm email and message field are not empty
-    if (!formData.email || !formData.message) {
-      showToast.info("Email and message are required fields");
-      return;
-    }
-
-    try {
-      setIsSending(true);
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: formData.email,
-          message: formData.message,
-        }),
+    setStatus("Sending...");
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+    if (response.ok) {
+      setStatus("Message sent!");
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
       });
-
-      // handle success
-      if (response.ok) {
-        showToast.success("Email Sent Successfully!");
-        setFormData({
-          email: "",
-          message: "",
-        });
-      } else {
-        showToast.error("There was a problem sending email. Pls try again!");
-      }
-    } catch (error) {
-      console.log("Error sending email:", error);
-      showToast.error("There was a problem sending email. Pls try again!");
-    } finally {
-      setIsSending(false);
+    } else {
+      setStatus("Failed to send message.");
     }
   };
 
@@ -62,6 +41,39 @@ export default function ContactSection() {
         <p className="mb-4">
           Interested in working together or have a question? Drop me a message:
         </p>
+        <form>
+          <input
+            name="name"
+            type="text"
+            placeholder="Your Name"
+            onChange={handleChange}
+            value={formData.name}
+            required
+            className="w-full p-2 border rounded"
+          />
+          <input
+            name="email"
+            type="email"
+            placeholder="Your Email"
+            onChange={handleChange}
+            value={formData.email}
+            required
+            className="w-full p-2 border rounded"
+          />
+          <input
+            name="message"
+            placeholder="Your Message"
+            onChange={handleChange}
+            value={formData.message}
+            required
+            className="w-full p-2 border rounded"
+            rows={5}
+          />
+          <button type="submit" className="bg-secondary p-2 rounded-xl">
+            Send Email
+          </button>
+          <p>{status}</p>
+        </form>
         <a
           href="mailto:emblaandersson@yahoo.se"
           className="inline-block mt-2 underline">
