@@ -22,7 +22,7 @@ export default function EducationSection() {
         <div className="mb-4">
           <p>2017 - 2019</p>
           <h3 className="text-xl font-semibold">Elementary Education</h3>
-          <p>Univerity of Charleston | West Virginia, USA</p>
+          <p>Eastern Florida State College | Florida, USA</p>
         </div>
       </div>
     </section>
