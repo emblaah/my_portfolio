@@ -48,9 +48,7 @@ export default function ProjectsSection() {
         <h2 className="text-3xl font-semibold mb-6">Projects</h2>
         <div className="flex flex-col gap-6">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="border-l border-secondary pl-4">
+            <div key={index} className="border-l border-secondary pl-4">
               <div className="flex justify-between items-center">
                 <h3 className="text-xl underline ">{project.title}</h3>
                 <div className="flex gap-2">

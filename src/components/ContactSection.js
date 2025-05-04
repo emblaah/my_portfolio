@@ -92,14 +92,8 @@ export default function ContactSection() {
             </button>
           </form>
         </div>
-        {/* <a
-          href="mailto:emblaandersson@yahoo.se"
-          className="inline-block mt-2 underline">
-          emblaandersson@yahoo.se
-        </a> */}
       </div>
     </section>
   );
 }
 
-// ADD LinkedIn, GitHub, and CV links here with icons
