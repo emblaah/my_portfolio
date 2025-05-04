@@ -12,11 +12,11 @@ export default function HomePage() {
   return (
     <div>
       <HeroSection />
-      <ContactSection />
       <AboutSection />
       <ProjectsSection />
       <EducationSection />
       <BackToTopBtn />
+      <ContactSection />
     </div>
   );
 }
