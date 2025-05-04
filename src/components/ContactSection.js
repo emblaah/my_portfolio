@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import AnimateSection from "./ui/AnimateSection";
 
 export default function ContactSection() {
   const [name, setName] = useState("");
@@ -44,7 +45,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="relative w-screen px-4 py-10">
-      <div className="w-full mx-auto px-[1rem] sm:px-[5rem]">
+      <AnimateSection className="w-full mx-auto px-[1rem] sm:px-[5rem]">
         <h2 className="text-3xl font-semibold mb-4">Contact Me!</h2>
         <p className="mb-4">
           Interested in working together or have a question? Drop me a message:
@@ -92,7 +93,7 @@ export default function ContactSection() {
             </button>
           </form>
         </div>
-      </div>
+      </AnimateSection>
     </section>
   );
 }

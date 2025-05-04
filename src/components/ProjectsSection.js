@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { LucideLink, Github } from "lucide-react";
+import AnimateSection from "./ui/AnimateSection";
 
 const projects = [
   {
@@ -44,11 +45,13 @@ const projects = [
 export default function ProjectsSection() {
   return (
     <section className="relative flex flex-col w-screen px-4 py-10">
-      <div className="w-full mx-auto px-[1rem] sm:px-[5rem]">
+      <AnimateSection className="w-full mx-auto px-[1rem] sm:px-[5rem]">
         <h2 className="text-3xl font-semibold mb-6">Projects</h2>
         <div className="flex flex-col gap-6">
           {projects.map((project, index) => (
-            <div key={index} className="border-l border-secondary pl-4">
+            <AnimateSection
+              key={index}
+              className="border-l border-secondary pl-4">
               <div className="flex justify-between items-center">
                 <h3 className="text-xl underline ">{project.title}</h3>
                 <div className="flex gap-2">
@@ -74,10 +77,10 @@ export default function ProjectsSection() {
                   </div>
                 ))}
               </div>
-            </div>
+            </AnimateSection>
           ))}
         </div>
-      </div>
+      </AnimateSection>
     </section>
   );
 }
