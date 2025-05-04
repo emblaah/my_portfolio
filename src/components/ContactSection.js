@@ -3,82 +3,100 @@
 import React, { useState } from "react";
 
 export default function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [status, setStatus] = useState("");
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submit, setSubmit] = useState(false);
+  const [status, setStatus] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Sending...");
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-    if (response.ok) {
-      setStatus("Message sent!");
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
+    setSubmit(true);
+    setStatus(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
       });
-    } else {
-      setStatus("Failed to send message.");
+      console.log("response", response);
+
+      const data = await response.json();
+      console.log("data", data);
+
+      console.log("response.ok", response.ok);
+      if (response.ok) {
+        setStatus({ type: "success", message: "Message sent successfully!" });
+        console.log("status", status);
+        // Reset form fields
+        setName("");
+        setEmail("");
+        setMessage("");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      setStatus({ type: "error", message: "Failed to send message." });
+    } finally {
+      setSubmit(false);
     }
   };
 
   return (
-    <section className="relative w-screen px-4 py-10">
+    <section id="contact" className="relative w-screen px-4 py-10">
       <div className="w-full mx-auto px-[1rem] sm:px-[5rem]">
-        <h2 className="text-3xl font-semibold mb-4">Contact</h2>
+        <h2 className="text-3xl font-semibold mb-4">Contact Me!</h2>
         <p className="mb-4">
           Interested in working together or have a question? Drop me a message:
         </p>
-        <form>
-          <input
-            name="name"
-            type="text"
-            placeholder="Your Name"
-            onChange={handleChange}
-            value={formData.name}
-            required
-            className="w-full p-2 border rounded"
-          />
-          <input
-            name="email"
-            type="email"
-            placeholder="Your Email"
-            onChange={handleChange}
-            value={formData.email}
-            required
-            className="w-full p-2 border rounded"
-          />
-          <input
-            name="message"
-            placeholder="Your Message"
-            onChange={handleChange}
-            value={formData.message}
-            required
-            className="w-full p-2 border rounded"
-            rows={5}
-          />
-          <button type="submit" className="bg-secondary p-2 rounded-xl">
-            Send Email
-          </button>
-          <p>{status}</p>
-        </form>
-        <a
+        <div>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <input
+                name="name"
+                type="text"
+                placeholder="Your Name"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+                required
+                className="w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-secondary"
+              />
+            </div>
+            <div>
+              <input
+                name="email"
+                type="email"
+                placeholder="Your Email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                required
+                className="w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-secondary"
+              />
+            </div>
+            <div>
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                onChange={(e) => setMessage(e.target.value)}
+                value={message}
+                required
+                className="w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-secondary"
+                rows="5"
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-secondary py-2 px-6 rounded-xl"
+              disabled={submit}>
+              {submit ? "Sending..." : "Send Message"}
+            </button>
+          </form>
+        </div>
+        {/* <a
           href="mailto:emblaandersson@yahoo.se"
           className="inline-block mt-2 underline">
           emblaandersson@yahoo.se
-        </a>
+        </a> */}
       </div>
     </section>
   );
