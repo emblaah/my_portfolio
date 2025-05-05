@@ -52,7 +52,7 @@ export default function ContactSection() {
         </p>
         <div>
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
+            <AnimateSection>
               <input
                 name="name"
                 type="text"
@@ -62,8 +62,8 @@ export default function ContactSection() {
                 required
                 className="w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-secondary"
               />
-            </div>
-            <div>
+            </AnimateSection>
+            <AnimateSection>
               <input
                 name="email"
                 type="email"
@@ -73,8 +73,8 @@ export default function ContactSection() {
                 required
                 className="w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-secondary"
               />
-            </div>
-            <div>
+            </AnimateSection>
+            <AnimateSection>
               <textarea
                 name="message"
                 placeholder="Your Message"
@@ -84,17 +84,18 @@ export default function ContactSection() {
                 className="w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-secondary"
                 rows="5"
               />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-secondary py-2 px-6 rounded-xl"
-              disabled={submit}>
-              {submit ? "Sending..." : "Send Message"}
-            </button>
+            </AnimateSection>
+            <AnimateSection>
+              <button
+                type="submit"
+                className="w-full bg-secondary py-2 px-6 rounded-xl"
+                disabled={submit}>
+                {submit ? "Sending..." : "Send Message"}
+              </button>
+            </AnimateSection>
           </form>
         </div>
       </AnimateSection>
     </section>
   );
 }
-

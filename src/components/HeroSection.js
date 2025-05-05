@@ -73,7 +73,6 @@ export default function HeroSection() {
 
     window.addEventListener("scroll", handleScroll);
     document.addEventListener("mousemove", handleMouseMove);
-    
 
     // Clean up the event listener when component unmounts
     return () => {
@@ -100,7 +99,7 @@ export default function HeroSection() {
       {/* The glow layer that will highlight the grid when hovering */}
       <div
         ref={glowLayerRef}
-        className="absolute inset-0 pointer-events-auto transition-all duration-100 min-h-screen"
+        className="absolute inset-0 pointer-events-auto transition-all duration-100 h-[85vh]"
         style={{
           backgroundImage: `
             linear-gradient(var(--secondary) 2px, transparent 1px),
@@ -115,7 +114,7 @@ export default function HeroSection() {
         }}
       />
       {/* The main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-dvh w-full">
+      <div className="relative z-10 flex flex-col items-center justify-center h-[85vh] w-full">
         <motion.div
           className="flex flex-col items-start"
           variants={containerVariants}

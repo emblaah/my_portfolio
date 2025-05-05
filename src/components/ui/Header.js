@@ -27,9 +27,9 @@ export default function Header() {
   return (
     <header className="absolute flex justify-between items-center w-full p-6 top-0 z-50">
       {isDarkMode ? (
-        <img src="/initials_dark.png" alt="Initials" className="h-12" />
+        <img src="/initials_dark.png" alt="Dark mode Initials" className="h-12" />
       ) : (
-        <img src="/initials_light.png" alt="Initials" className="h-12" />
+        <img src="/initials_light.png" alt="Light mode Initials" className="h-12" />
       )}
 
       <nav className="space-x-4 flex justify-center items-center">

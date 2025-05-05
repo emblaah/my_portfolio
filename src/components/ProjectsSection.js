@@ -53,7 +53,7 @@ export default function ProjectsSection() {
               key={index}
               className="border-l border-secondary pl-4">
               <div className="flex justify-between items-center">
-                <h3 className="text-xl underline ">{project.title}</h3>
+                <h3 className="text-xl">{project.title}</h3>
                 <div className="flex gap-2">
                   <Link
                     href={project.liveLink}
