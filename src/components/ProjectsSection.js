@@ -45,7 +45,7 @@ const projects = [
 export default function ProjectsSection() {
   return (
     <section className="relative flex flex-col w-screen px-4 py-10">
-      <AnimateSection className="w-full mx-auto px-[1rem] sm:px-[5rem]">
+      <AnimateSection className="w-full mx-auto px-[1rem] sm:px-[3rem] md:px-[5rem]">
         <h2 className="text-3xl font-semibold mb-6">Projects</h2>
         <div className="flex flex-col gap-6">
           {projects.map((project, index) => (

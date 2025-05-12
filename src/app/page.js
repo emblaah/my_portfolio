@@ -8,6 +8,7 @@ import HeroSection from "@/components/HeroSection";
 import EducationSection from "@/components/EducationSection";
 import BackToTopBtn from "@/components/ui/BackToTopBtn";
 import TechSection from "@/components/TechSection";
+import SocialsLinks from "@/components/ui/SocialsLinks";
 
 export default function HomePage() {
   return (
@@ -19,6 +20,7 @@ export default function HomePage() {
       <EducationSection />
       <ContactSection />
       <BackToTopBtn />
+      <SocialsLinks />
     </div>
   );
 }

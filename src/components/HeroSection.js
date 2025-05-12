@@ -114,7 +114,7 @@ export default function HeroSection() {
         }}
       />
       {/* The main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-[85vh] w-full">
+      <div className="relative z-10 flex flex-col items-center justify-center h-[90vh] w-full">
         <motion.div
           className="flex flex-col items-start"
           variants={containerVariants}
