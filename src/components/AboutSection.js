@@ -12,11 +12,16 @@ export default function AboutSection() {
           className="h-50 w-50 rounded-full mb-4 shadow-lg"
         />
         <div>
-          <h2 className="text-3xl font-semibold mb-4">About Me</h2>
-          <p className="leading-relaxed">
-            I'm a web developer focused on building beautiful, fast, and
-            accessible websites using React, Next.js, and Tailwind. I enjoy
-            solving real-world problems and learning new tools.
+          <h2 className="text-3xl font-semibold mb-4">Hi! I'm Embla!</h2>
+          <p>
+            I'm a frontend developer in training with growing skills in backend
+            development. I focus on building beautiful, fast, and responsive
+            websites using React, Next.js, and Tailwind. While my professional
+            background started in education, I have always had a passion for
+            technology. <br />
+            <br />I love learning new things and am always looking for ways to
+            improve my skills. I enjoy problem-solving and creativity that comes
+            with development.
           </p>
         </div>
       </AnimateSection>
