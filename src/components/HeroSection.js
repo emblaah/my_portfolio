@@ -99,7 +99,7 @@ export default function HeroSection() {
       {/* The glow layer that will highlight the grid when hovering */}
       <div
         ref={glowLayerRef}
-        className="absolute inset-0 pointer-events-auto transition-all duration-100 h-[85vh]"
+        className="absolute inset-0 pointer-events-auto transition-all duration-100 h-[90vh]"
         style={{
           backgroundImage: `
             linear-gradient(var(--secondary) 2px, transparent 1px),
