@@ -4,7 +4,7 @@ import AnimateSection from "@/components/ui/AnimateSection";
 
 export default function AboutSection() {
   return (
-    <section className="relative flex flex-col items-center justify-center w-screen px-4 py-10 bg-secondary-background">
+    <section className="relative flex flex-col items-center justify-center w-full py-10 bg-secondary-background">
       <AnimateSection className="w-full md:flex md:flex-row flex flex-col md:items-start items-center gap-7 mx-auto px-[1rem] sm:px-[3rem] md:px-[5rem]">
         <img
           src="/Dev_Image.jpeg"

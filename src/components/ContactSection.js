@@ -44,7 +44,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative w-screen px-4 py-10">
+    <section id="contact" className="relative w-full py-10">
       <AnimateSection className="w-full mx-auto px-[1rem] sm:px-[3rem] md:px-[5rem]">
         <h2 className="text-3xl font-semibold mb-4">Contact Me!</h2>
         <p className="mb-4">

@@ -26,7 +26,7 @@ export default function EducationSection() {
   ];
 
   return (
-    <section className="relative w-screen px-4 py-10 bg-secondary-background">
+    <section className="relative w-full py-10 bg-secondary-background">
       <AnimateSection className="w-full mx-auto px-[1rem] sm:px-[3rem] md:px-[5rem]">
         <h2 className="text-3xl font-semibold mb-4">Education</h2>
         {educationData.map((edu, index) => (

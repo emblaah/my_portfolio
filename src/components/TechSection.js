@@ -75,7 +75,7 @@ export default function TechSection() {
   ];
   return (
     <div>
-      <section className="relative flex w-screen px-4 py-10 bg-secondary-background">
+      <section className="relative flex w-full py-10 bg-secondary-background">
         <div className="w-full flex flex-col mx-auto px-[1rem] sm:px-[3rem] md:px-[5rem]">
           <h2 className="text-3xl font-semibold mb-4">
             Technologies I have worked with:
