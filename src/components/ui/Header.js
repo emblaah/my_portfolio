@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import ThemeButton from "./ThemeButton";
+import ThemeButton from "./ThemeButtonAndSocials";
 
 export default function Header() {
   const [isDarkMode, setIsDarkMode] = useState(false);

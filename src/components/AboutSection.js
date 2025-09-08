@@ -11,6 +11,7 @@ export default function AboutSection() {
           alt="Animated photo of me"
           className="h-50 w-50 rounded-full mb-4 shadow-lg"
         />
+
         <div>
           <h2 className="text-3xl font-semibold mb-4">Hi! I'm Embla!</h2>
           <p>
