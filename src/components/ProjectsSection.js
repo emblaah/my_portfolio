@@ -57,11 +57,15 @@ export default function ProjectsSection() {
                 <div className="flex gap-2">
                   <Link
                     href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="bg-secondary-background p-2 rounded-full hover:text-secondary duration-200 ease-in transition">
                     <LucideLink />
                   </Link>
                   <Link
                     href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:text-secondary duration-200 ease-in bg-secondary-background p-2 rounded-full">
                     <Github />
                   </Link>
