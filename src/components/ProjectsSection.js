@@ -7,15 +7,6 @@ import AnimateSection from "./ui/AnimateSection";
 const projects = [
   {
     id: 1,
-    title: "Todo List App",
-    description:
-      "A simple todo list application built with React and styled using Tailwind CSS. Users can add, edit, and delete tasks.",
-    techsUsed: ["React", "Tailwind CSS"],
-    githubLink: "https://github.com/emblaah/ws-react-todolist",
-    liveLink: "https://ws-react-todolist.vercel.app/",
-  },
-  {
-    id: 2,
     title: "Pokemon API Site",
     description:
       "A website that dynamically connects to the Pokemon API to display information about different Pokemon. Built with React and styled using Tailwind CSS.",
@@ -24,13 +15,22 @@ const projects = [
     liveLink: "https://pokemon-site-nu.vercel.app/",
   },
   {
-    id: 3,
+    id: 2,
     title: "QuizMaster App",
     description:
       "A quiz website where users can add questions, play the game, and view a leaderboard. Built with React and styled using Tailwind CSS.",
     techsUsed: ["React", "Next.js", "Tailwind CSS"],
     githubLink: "https://github.com/emblaah/chas_quiz_site",
     liveLink: "https://chas-quiz-site.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "Todo List App",
+    description:
+      "A simple todo list application built with React and styled using Tailwind CSS. Users can add, edit, and delete tasks.",
+    techsUsed: ["React", "Tailwind CSS"],
+    githubLink: "https://github.com/emblaah/ws-react-todolist",
+    liveLink: "https://ws-react-todolist.vercel.app/",
   },
   // {
   //   id: 4,
