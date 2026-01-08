@@ -5,7 +5,7 @@ import AnimateSection from "@/components/ui/AnimateSection";
 export default function AboutSection() {
   return (
     <section className="relative flex flex-col items-center justify-center w-full py-10 bg-secondary-background">
-      <AnimateSection className="w-full md:flex md:flex-row flex flex-col md:items-start items-center gap-7 mx-auto px-[1rem] sm:px-[3rem] md:px-[5rem]">
+      <AnimateSection className="max-w-7xl md:flex md:flex-row flex flex-col md:items-start items-center gap-7 mx-auto px-[1rem] sm:px-[3rem] md:px-[5rem]">
         <img
           src="/Dev_Image.jpeg"
           alt="Animated photo of me"
@@ -15,14 +15,12 @@ export default function AboutSection() {
         <div>
           <h2 className="text-3xl font-semibold mb-4">Hi! I'm Embla!</h2>
           <p>
-            I'm a frontend developer in training with growing skills in backend
-            development. I focus on building beautiful, fast, and responsive
-            websites using React, Next.js, and Tailwind. While my professional
-            background started in education, I have always had a passion for
-            technology. <br />
-            <br />I love learning new things and am always looking for ways to
-            improve my skills. I enjoy problem-solving and creativity that comes
-            with development.
+            Aspiring full-stack developer located in Sweden with formal training
+            from Chas Academy and hands-on experience building personal
+            projects. Motivated to expand technical expertise and contribute to
+            impactful development work. Strong team collaborator developed
+            through sports and professional roles, with a focus on problem
+            solving, continuous learning, and producing high-quality code.
           </p>
         </div>
       </AnimateSection>

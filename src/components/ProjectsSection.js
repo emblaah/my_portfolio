@@ -32,41 +32,33 @@ const projects = [
     githubLink: "https://github.com/emblaah/ws-react-todolist",
     liveLink: "https://ws-react-todolist.vercel.app/",
   },
-  // {
-  //   id: 4,
-  //   title: "Blog Platform",
-  //   description: "A blogging platform with user authentication and comments.",
-  //   techsUsed: ["React", "Next.js", "Tailwind CSS"],
-  //   githubLink: "https://example.com",
-  //   liveLink: "https://example.com",
-  // },
 ];
 
 export default function ProjectsSection() {
   return (
-    <section className="relative flex flex-col w-full py-10">
-      <AnimateSection className="w-full mx-auto px-[1rem] sm:px-[3rem] md:px-[5rem]">
+    <section className="relative w-full py-10">
+      <AnimateSection className="max-w-7xl mx-auto flex flex-col px-[1rem] sm:px-[3rem] md:px-[5rem]">
         <h2 className="text-3xl font-semibold mb-6">Projects</h2>
-        <div className="flex flex-col gap-6">
+        <AnimateSection className="flex flex-col gap-6 ">
           {projects.map((project, index) => (
             <AnimateSection
               key={index}
-              className="border-l border-secondary pl-4">
-              <div className="flex justify-between items-center">
+              className="border-l border-secondary pl-4 w-full self-stretch">
+              <div className="flex justify-between items-center ">
                 <h3 className="text-xl">{project.title}</h3>
                 <div className="flex gap-2">
                   <Link
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-secondary-background p-2 rounded-full hover:text-secondary duration-200 ease-in transition">
+                    className="bg-secondary-background p-2 rounded-full  hover:text-secondary duration-200 ease-in transition">
                     <LucideLink />
                   </Link>
                   <Link
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-secondary duration-200 ease-in bg-secondary-background p-2 rounded-full">
+                    className=" hover:text-secondary duration-200 ease-in bg-secondary-background p-2 rounded-full">
                     <Github />
                   </Link>
                 </div>
@@ -83,7 +75,7 @@ export default function ProjectsSection() {
               </div>
             </AnimateSection>
           ))}
-        </div>
+        </AnimateSection>
       </AnimateSection>
     </section>
   );

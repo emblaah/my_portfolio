@@ -8,6 +8,7 @@ import {
   FaFigma,
   FaAws,
   FaDocker,
+  FaErlang
 } from "react-icons/fa";
 import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
 import { SiFramer, SiMysql, SiExpress } from "react-icons/si";
@@ -35,6 +36,7 @@ const icons = {
   FaAws: FaAws,
   RiNextjsFill: RiNextjsFill,
   FaDocker: FaDocker,
+  FaErlang: FaErlang,
 };
 
 export default function TechSection() {
@@ -59,6 +61,7 @@ export default function TechSection() {
         { name: "Next.js", icon: "RiNextjsFill" },
         { name: "Express.js", icon: "SiExpress" },
         { name: "MySQL", icon: "SiMysql" },
+        { name: "Erlang", icon: "FaErlang" },
       ],
     },
     {
@@ -76,11 +79,11 @@ export default function TechSection() {
   return (
     <div>
       <section className="relative flex w-full py-10 bg-secondary-background">
-        <div className="w-full flex flex-col mx-auto px-[1rem] sm:px-[3rem] md:px-[5rem]">
+        <div className="max-w-7xl flex flex-col mx-auto px-[1rem] sm:px-[3rem] md:px-[5rem]">
           <h2 className="text-3xl font-semibold mb-4">
             Technologies I have worked with:
           </h2>
-          <AnimateSection>
+          <AnimateSection className="w-full">
             <div className="flex flex-col">
               {techStacks.map((stack, index) => {
                 return (
@@ -92,13 +95,13 @@ export default function TechSection() {
                     </AnimateSection>
                     {/* Map through the techs array */}
                     <AnimateSection>
-                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 ">
+                      <div className="flex flex-wrap gap-4 ">
                         {stack.techs.map((tech, index) => {
                           // Dynamically import the icon component
                           const IconComponent = icons[tech.icon];
                           return (
                             <AnimateSection key={index}>
-                              <div className="flex gap-4 bg-secondary rounded-full p-2">
+                              <div className="flex gap-4 bg-secondary rounded-full p-2 px-4">
                                 {IconComponent && (
                                   <IconComponent className="w-6 h-6 " />
                                 )}
