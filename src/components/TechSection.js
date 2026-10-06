@@ -8,7 +8,8 @@ import {
   FaFigma,
   FaAws,
   FaDocker,
-  FaErlang
+  FaErlang,
+  FaPython,
 } from "react-icons/fa";
 import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
 import { SiFramer, SiMysql, SiExpress } from "react-icons/si";
@@ -37,6 +38,7 @@ const icons = {
   RiNextjsFill: RiNextjsFill,
   FaDocker: FaDocker,
   FaErlang: FaErlang,
+  FaPython: FaPython,
 };
 
 export default function TechSection() {
@@ -62,6 +64,7 @@ export default function TechSection() {
         { name: "Express.js", icon: "SiExpress" },
         { name: "MySQL", icon: "SiMysql" },
         { name: "Erlang", icon: "FaErlang" },
+        { name: "Python", icon: "FaPython" },
       ],
     },
     {

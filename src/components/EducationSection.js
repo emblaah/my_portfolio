@@ -4,6 +4,11 @@ import AnimateSection from "@/components/ui/AnimateSection";
 export default function EducationSection() {
   const educationData = [
     {
+      year: "2026 - Current",
+      title: "Data & AI Engineering",
+      institution: "SALT | Stockholm, Sweden",
+    },
+    {
       year: "2024 - 2026",
       title: "Frontend Developer",
       institution: "Chas Academy | Stockholm, Sweden",

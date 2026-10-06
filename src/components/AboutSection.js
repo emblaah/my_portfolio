@@ -14,6 +14,7 @@ export default function AboutSection() {
 
         <div>
           <h2 className="text-3xl font-semibold mb-4">Hi! I'm Embla!</h2>
+
           <p>
             Aspiring full-stack developer located in Sweden with formal training
             from Chas Academy and hands-on experience building personal

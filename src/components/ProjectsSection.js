@@ -23,15 +23,6 @@ const projects = [
     githubLink: "https://github.com/emblaah/chas_quiz_site",
     liveLink: "https://chas-quiz-site.vercel.app/",
   },
-  {
-    id: 3,
-    title: "Todo List App",
-    description:
-      "A simple todo list application built with React and styled using Tailwind CSS. Users can add, edit, and delete tasks.",
-    techsUsed: ["React", "Tailwind CSS"],
-    githubLink: "https://github.com/emblaah/ws-react-todolist",
-    liveLink: "https://ws-react-todolist.vercel.app/",
-  },
 ];
 
 export default function ProjectsSection() {

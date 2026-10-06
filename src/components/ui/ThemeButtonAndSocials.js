@@ -67,7 +67,7 @@ export default function ThemeButton() {
 
   return (
     <div className="flex items-center gap-3">
-      {/* Resume Dropdown */}
+      {/* Resume Dropdown
       <div className="relative" ref={dropdownRef}>
         <button
           onClick={() => setOpen((prev) => !prev)}
@@ -94,7 +94,7 @@ export default function ThemeButton() {
             </a>
           </div>
         )}
-      </div>
+      </div> */}
       {/* Socials */}
       {socials.map((social, idx) => (
         <a

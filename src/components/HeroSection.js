@@ -121,22 +121,32 @@ export default function HeroSection() {
           initial="hidden"
           animate="visible">
           <motion.div
-            className="text-5xl md:text-6xl lg:text-7xl mb-2"
+            className="text-secondary text-5xl md:text-7xl lg:text-8xl mb-2"
             variants={itemVariants}>
             <span>Embla</span>
           </motion.div>
           <motion.div
-            className="text-5xl md:text-6xl lg:text-7xl mb-2 ml-12 md:ml-16"
+            className="text-secondary text-5xl md:text-7xl lg:text-8xl mb-2 ml-12 md:ml-16"
             variants={itemVariants}>
             <span>Andersson</span>
           </motion.div>
           <motion.div
-            className="text-secondary text-4xl md:text-6xl lg:text-7xl mb-2 ml-24 md:ml-32"
+            className="text-4xl md:text-6xl lg:text-7xl ml-24 md:ml-32"
+            variants={itemVariants}>
+            <span>Data</span>
+          </motion.div>
+          <motion.div
+            className="text-4xl md:text-6xl lg:text-7xl ml-38 md:ml-48"
+            variants={itemVariants}>
+            <span>Engineer</span>
+          </motion.div>
+          <motion.div
+            className="text-secondary text-4xl md:text-6xl lg:text-7xl mb-2 ml-52 md:ml-64"
             variants={itemVariants}>
             <span>Frontend</span>
           </motion.div>
           <motion.div
-            className="text-secondary text-4xl md:text-6xl lg:text-7xl ml-38 md:ml-48"
+            className="text-secondary text-4xl md:text-6xl lg:text-7xl ml-64 md:ml-80"
             variants={itemVariants}>
             <span>Developer</span>
           </motion.div>
